@@ -11,7 +11,7 @@ const config: Config = {
 		extend: {
 			container: {
 				center: true,
-				padding: '2rem'
+				padding: '2rem',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -72,7 +72,7 @@ const config: Config = {
 			workSans: ['var(--font-workSans)'],
 		},
 	},
-	plugins: [require('tailwindcss-animate')],
+	plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 }
 export default config
 
