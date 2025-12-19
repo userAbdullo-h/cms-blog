@@ -13,7 +13,7 @@ function Navbar() {
 
 	return (
 		<div className='h-[10vh] backdrop-blur-sm border-b fixed z-40 inset-0 bg-background'>
-			<div className='container max-w-6xl mx-auto h-[10vh] flex items-center justify-between max-md:justify-around'>
+			<div className='container max-w-6xl mx-auto h-[10vh] flex items-center justify-between '>
 				{/* Logo */}
 				<Link href={'/'}>
 					<h1 className='text-4xl font-createRound'>UBlog</h1>
