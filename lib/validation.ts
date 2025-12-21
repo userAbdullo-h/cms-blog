@@ -5,3 +5,7 @@ export const contactSchema = z.object({
 	email: z.email({ error: 'Enter valid email address' }),
 	name: z.string().min(3, { error: 'Enter atleast 3 characters' }),
 })
+
+export const emailSchema = z.object({
+	email: z.email({ error: 'Enter valid email address' }),
+})

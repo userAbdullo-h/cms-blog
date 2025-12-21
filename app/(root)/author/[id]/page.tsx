@@ -2,10 +2,20 @@ import BlogCard from '@/components/cards/blog'
 import { getDetailedAuthor } from '@/service/author.service'
 import Image from 'next/image'
 
-async function Page({ params }: { params: { id: string } }) {
+export async function generateMetadata({ params }: { params: { id: string } }) {
 	const author = await getDetailedAuthor(params.id)
 
-	console.log(author)
+	return {
+		title: author.name,
+		description: author.bio,
+		openGraph: {
+			images: author.image.url,
+		},
+	}
+}
+
+async function Page({ params }: { params: { id: string } }) {
+	const author = await getDetailedAuthor(params.id)
 
 	return (
 		<div className='max-w-6xl mx-auto pt-36'>

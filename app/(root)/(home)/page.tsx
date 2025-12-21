@@ -1,11 +1,10 @@
 import BlogCard from '@/components/cards/blog'
 import BgArrow from '@/components/shared/bg-arrow'
-import { getBlogs } from '@/service/blog.service'
+import NotFound from '@/components/shared/not-found'
+import { getLastBlogs } from '@/service/blog.service'
 
 async function HomePage() {
-	const blogs = await getBlogs()
-
-	console.log(blogs)
+	const blogs = await getLastBlogs()
 
 	return (
 		<div className='max-w-6xl mx-auto'>
@@ -20,9 +19,13 @@ async function HomePage() {
 			</h2>
 
 			<div className='flex flex-col space-y-24 mt-24'>
-				{blogs.map(blog => (
-					<BlogCard key={blog.title} {...blog} />
-				))}
+				{blogs.length ? (
+					blogs.map(blog => <BlogCard key={blog.title} {...blog} />)
+				) : (
+					<div className=''>
+						<NotFound description='No posts published belongs to this category' />
+					</div>
+				)}
 			</div>
 		</div>
 	)

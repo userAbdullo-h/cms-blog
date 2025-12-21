@@ -1,6 +1,7 @@
 import { IAuthor } from '@/types'
 // 1. GraphQLClient ni import qiling
 import { GraphQLClient, gql } from 'graphql-request'
+import { cache } from 'react'
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT!
 const hygraphToken = process.env.HYGRAPH_ASSET_TOKEN // Tokenni o'qiymiz
@@ -31,7 +32,7 @@ export const getAuthors = async () => {
 	return authors
 }
 
-export const getDetailedAuthor = async (id: string) => {
+export const getDetailedAuthor = cache(async (id: string) => {
 	const query = gql`
 		query MyQuery($id: ID) {
 			author(where: { id: $id }) {
@@ -76,4 +77,4 @@ export const getDetailedAuthor = async (id: string) => {
 	// Send the query
 	const { author } = await client.request<{ author: IAuthor }>(query, { id })
 	return author
-}
+})

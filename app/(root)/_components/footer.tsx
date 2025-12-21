@@ -1,8 +1,6 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { User2 } from 'lucide-react'
+import EmailForm from '@/components/forms/email'
 import { useState } from 'react'
 
 function Footer() {
@@ -13,7 +11,8 @@ function Footer() {
 				Get latest posts delivered right to your inbox
 			</h1>
 			<div className='grid max-md:grid-cols-1 grid-cols-3 md:gap-4 w-full'>
-				<Input
+				<EmailForm />
+				{/* <Input
 					className='w-full col-span-2 max-md:w-2/3 mx-auto'
 					placeholder='Your email address...'
 					onFocus={() => setActive(true)}
@@ -25,7 +24,7 @@ function Footer() {
 					className='max-md:mt-3 max-md:w-2/3 mx-auto'>
 					<User2 />
 					<span>Join today</span>
-				</Button>
+				</Button> */}
 			</div>
 		</footer>
 	)

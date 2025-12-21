@@ -1,6 +1,7 @@
 import { IBlog, ICategoryAndTags } from '@/types'
 // 1. GraphQLClient ni import qiling
 import { GraphQLClient, gql } from 'graphql-request'
+import { cache } from 'react'
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT!
 const hygraphToken = process.env.HYGRAPH_ASSET_TOKEN // Tokenni o'qiymiz
@@ -16,6 +17,9 @@ export const getCategories = async () => {
 			categories {
 				name
 				slug
+				blogs {
+					id
+				}
 			}
 		}
 	`
@@ -26,7 +30,7 @@ export const getCategories = async () => {
 	return categories
 }
 
-export const getBlogsByCategory = async (slug: string) => {
+export const getBlogsByCategory = cache(async (slug: string) => {
 	const query = gql`
 		query MyQuery($slug: String!) {
 			category(where: { slug: $slug }) {
@@ -70,4 +74,4 @@ export const getBlogsByCategory = async (slug: string) => {
 		slug,
 	})
 	return category
-}
+})

@@ -1,7 +1,12 @@
 import BlogCard from '@/components/cards/blog'
 import { getBlogs } from '@/service/blog.service'
 import { Dot, Home } from 'lucide-react'
+import { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+	title: 'All blogs',
+}
 
 async function BlogPage() {
 	const blogs = await getBlogs()
@@ -24,7 +29,7 @@ async function BlogPage() {
 					<p className='text-muted-foreground'>Blogs</p>
 				</div>
 			</div>
-			<div className='grid grid-cols-2 max-md:grid-cols-1 gap-x-4 gap-y-24 mt-24'>
+			<div className='grid grid-cols-2 max-md:grid-cols-1 gap-x-4 gap-y-24 mt-15'>
 				{blogs.map(blog => (
 					<BlogCard key={blog.title} {...blog} isVertical />
 				))}

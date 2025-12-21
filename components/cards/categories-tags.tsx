@@ -9,10 +9,11 @@ interface Props extends ICategoryAndTags {
 function CategoriesTagsCard(item: Props) {
 	return (
 		<Link
-			className='bg-secondary p-4 md:p-8 rounded-md shadow-xl flex items-center gap-4 hover:bg-secondary/80 transition-colors dark:shadow-white/5'
+			className='bg-secondary p-4  rounded-md shadow-xl flex flex-col items-center gap-2 justify-center hover:bg-secondary/80 transition-colors dark:shadow-white/5'
 			href={`/${item.type}/${item.slug}`}>
 			{item.type === 'tags' ? <Tags /> : <Layers2 />}
-			<h1 className='text-2xl font-createRound'>{item.name}</h1>
+			<h1 className='text-xl font-createRound'>{item.name}</h1>
+			<p className=''>{item.blogs.length} blogs</p>
 		</Link>
 	)
 }
