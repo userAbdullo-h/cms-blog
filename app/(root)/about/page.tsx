@@ -30,7 +30,7 @@ async function AboutPage() {
 				</div>
 			</div>
 			<h1 className='text-center text-4xl font-createRound'>
-				We are the UBlog, <br /> Team of content writers and designers.
+				We are the Blog community, <br /> Team of content writers and designers.
 			</h1>
 			<div className='grid grid-cols-4 gap-4 min-h-96 mt-6'>
 				<div className='col-span-2 max-md:col-span-4 relative h-80'>

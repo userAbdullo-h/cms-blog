@@ -35,7 +35,7 @@ function EmailForm() {
 				},
 				body: JSON.stringify({
 					chat_id: telegramChatId,
-					text: `This message from UBlog email section\nEmail: ${values.email}`,
+					text: `This message from Blog email section\nEmail: ${values.email}`,
 				}),
 			}
 		)

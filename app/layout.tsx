@@ -18,11 +18,11 @@ const workSans = Work_Sans({
 })
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://userabdullo.link'),
-	title: 'UBlog',
+	metadataBase: new URL('https://blog.zencode.now'),
+	title: 'Blog',
 	description:
 		'Programming news, tips, and the latest programming news. You can find a guide to learning and developing programming on our blog. Also you can find interesting memes about IT world',
-	authors: [{ name: 'Abdulloh Tursunov', url: 'https://userabdullo.link/' }],
+	authors: [{ name: 'Abdulloh Tursunov', url: 'https://blog.zencode.now/' }],
 	icons: { icon: '/blog-icon.png' },
 	keywords:
 		'Funny memes, Programmer humor, Coding memes, Developer struggles, Sysadmin memes, Debugging jokes, Production failure memes, Junior vs Senior developer, Tech interview memes, Imposter syndrome in tech, Code review roast, Tech layoffs news, Silicon Valley drama, Startup culture, Remote work trends, AI replacing programmers, ChatGPT coding fails, Copilot memes, LLM news',
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
 		images:
 			'https://static.vecteezy.com/system/resources/thumbnails/069/469/030/small/blogger-black-circle-outline-logo-on-transparent-background-free-png.png',
 		countryName: 'Uzbekistan',
-		siteName: 'UBlog',
-		emails: 'info@sammi.ac',
+		siteName: 'Blog',
+		emails: 'info@zencode.now',
 	},
 }
 
