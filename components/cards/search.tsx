@@ -7,7 +7,7 @@ import { DrawerClose } from '../ui/drawer'
 
 function SearchCard(blog: IBlog) {
 	return (
-		<Link href={`/blog/${blog.slug}`}>
+		<Link href={`/blogs/${blog.slug}`}>
 			<DrawerClose className='flex flex-col space-y-2 text-start'>
 				<Image
 					width={200}

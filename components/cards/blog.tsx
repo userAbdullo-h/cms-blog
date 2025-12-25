@@ -24,7 +24,7 @@ function BlogCard(blog: Props) {
 						height={335}
 						src={blog.image.url}
 						alt={blog.title}
-						className='px-2 md:px-7 rounded-md group-hover:-translate-y-7 -translate-y-6 transition-all object-cover grayscale group-hover:grayscale-0 max-md:-translate-y-2 max-md:group-hover:-translate-y-3'
+						className='px-2 md:px-7 rounded-md group-hover:-translate-y-7 -translate-y-6 transition-all object-cover grayscale max-md:grayscale-0 group-hover:grayscale-0 max-md:-translate-y-2 max-md:group-hover:-translate-y-3'
 					/>
 				</div>
 			</Link>
@@ -62,20 +62,20 @@ function BlogCard(blog: Props) {
 							height={30}
 							className='object-cover rounded-sm'
 						/>
-						<p>by {blog.author.name}</p>
+						<p className=' line-clamp-1'>by {blog.author.name}</p>
 					</div>
 					<Dot />
 					<div className='flex items-center gap-2'>
 						<Link href={`/tags/${blog.tag.slug}`}>
 							<Badge variant={'secondary'} role='button'>
 								<Tag className='w-3 h-3 me-2' />
-								{blog.tag.name}
+								<p className=' line-clamp-1'>{blog.tag.name}</p>
 							</Badge>
 						</Link>
 						<Link href={`/category/${blog.category.slug}`}>
 							<Badge variant={'outline'} role='button'>
 								<Layers2 className='w-3 h-3 me-2' />
-								{blog.category.name}
+								<p className=' line-clamp-1'>{blog.category.name}</p>
 							</Badge>
 						</Link>
 					</div>

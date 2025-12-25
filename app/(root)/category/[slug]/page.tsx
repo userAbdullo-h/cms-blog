@@ -34,7 +34,11 @@ async function TagsPage({ params }: { params: { slug: string } }) {
 						Home
 					</Link>
 					<Dot />
-					<p className='text-muted-foreground'>Categories</p>
+					<Link
+						href={'/category'}
+						className='opacity-90 hover:underline hover:opacity-70 transition-colors'>
+						Categories
+					</Link>
 					<Dot />
 					<p className='text-muted-foreground'>{category.name}</p>
 				</div>
