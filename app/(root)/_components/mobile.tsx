@@ -2,7 +2,12 @@
 
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+	Sheet,
+	SheetClose,
+	SheetContent,
+	SheetTrigger,
+} from '@/components/ui/sheet'
 import { navLinks } from '@/constants'
 import { cn } from '@/lib/utils'
 import { Menu } from 'lucide-react'
@@ -32,7 +37,7 @@ function Mobile() {
 								'hover:bg-blue-400/20 py-1 px-3 cursor-pointer rounded-sm transition-colors',
 								pathname === nav.route && 'text-blue-400 bg-blue-400/20'
 							)}>
-							{nav.name}
+							<SheetClose>{nav.name}</SheetClose>
 						</Link>
 					))}
 				</div>

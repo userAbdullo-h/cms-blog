@@ -12,8 +12,8 @@ function Navbar() {
 	const pathname = usePathname()
 
 	return (
-		<div className='h-[10vh] backdrop-blur-sm border-b fixed z-40 inset-0 bg-background'>
-			<div className='container max-w-6xl mx-auto h-[10vh] flex items-center justify-between '>
+		<div className='h-[10vh] backdrop-blur-sm border-b fixed z-40 top-0 inset-x-0 bg-background'>
+			<div className='container px-4 overflow-hidden max-w-6xl mx-auto h-[10vh] flex items-center justify-between '>
 				{/* Logo */}
 				<Link href={'/'}>
 					<h1 className='text-4xl font-createRound'>UBlog</h1>
